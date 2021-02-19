@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %} {% endblock %}
+
+{% block body %}
+
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+            <!-- Form -->
+            <form class="form-example" method="POST" enctype="multipart/form-data">
+                <h1>Signature Verification</h1>
+                <p class="description">To find the similarity of the two different Signature images using Siamese Model.</p>
+                <!-- Input fields -->
+                <div class="form-group">
+                    <label for="image1"><b>Please First Image:</b></label>
+                    <input type="file" class="form-control-file" id="image1" name="image1">
+                </div>
+                <div class="form-group">
+                    <label for="image2"><b>Please Second Image:</b></label>
+                    <input type="file" class="form-control-file" id="image2" name="image2">
+                </div>
+                <button type="submit" class="btn btn-primary btn-customized">Predict</button>
+                <br>
+                <br>
+                <h4>Similarity:{{ prediction }}</h4>
+                <!-- End input fields -->
+
+            </form>
+            <!-- Form end -->
+        </div>
+    </div>
+</div>
+
+{% endblock %}
